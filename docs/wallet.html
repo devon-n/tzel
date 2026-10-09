@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TzEL Wallet — Private transactions in one command</title>
-  <meta name="description" content="Install the TzEL wallet in one command. Docker container, self-custodial keys, Temple wallet pairing, Ushuaianet testnet.">
+  <meta name="description" content="Install the TzEL wallet in one command. Docker container, self-custodial keys, Temple wallet pairing, Shadownet testnet.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -827,7 +827,7 @@
 <body>
   <div class="migration-banner" role="status">
     <span class="mb-dot" aria-hidden="true"></span>
-    <span><strong>Heads up:</strong> TzEL migrates from Ushuaianet to <strong>Shadownet</strong> on <strong>Sept&nbsp;21, 2026</strong> &mdash; testnet balances won&rsquo;t carry over.</span>
+    <span><strong>Heads up:</strong> TzEL now runs on <strong>Shadownet</strong> &mdash; Ushuaianet is retired and its testnet balances did not carry over.</span>
   </div>
   <div class="page-shell">
     <nav>
@@ -844,7 +844,7 @@
         <div class="nav-links" id="nav-menu">
           <a href="#how-it-works">How it works</a>
           <a href="index.html">TzEL home</a>
-          <a href="https://github.com/trilitech/tzel/blob/main/docs/ushuaianet_tutorial.md" target="_blank" rel="noreferrer">Tutorial</a>
+          <a href="https://github.com/trilitech/tzel/blob/main/docs/shadownet_tutorial.md" target="_blank" rel="noreferrer">Tutorial</a>
           <a href="whitepaper.pdf" target="_blank" rel="noreferrer">Whitepaper</a>
           <a href="https://github.com/trilitech/tzel" class="btn btn-primary" target="_blank" rel="noreferrer">View on GitHub</a>
         </div>
@@ -854,12 +854,12 @@
     <!-- ════ Hero ════ -->
     <section class="hero">
       <div class="hero-content">
-        <div class="hero-badge">Ushuaianet testnet &mdash; experimental</div>
+        <div class="hero-badge">Shadownet testnet &mdash; experimental</div>
         <h1>Private transactions.<br><span class="gradient-text">One command.</span></h1>
         <p class="hero-sub">
           The TzEL wallet runs as a self-contained Docker container on your machine.
           Your keys never leave your device. One command installs, starts, and connects
-          to the Ushuaianet testnet.
+          to the Shadownet testnet.
         </p>
 
         <div class="install-block">
@@ -883,7 +883,7 @@
 
         <div class="hero-actions">
           <a href="#how-it-works" class="btn btn-primary">How it works</a>
-          <a href="https://github.com/trilitech/tzel/blob/main/docs/ushuaianet_tutorial.md" class="btn btn-outline" target="_blank" rel="noreferrer">Read the tutorial</a>
+          <a href="https://github.com/trilitech/tzel/blob/main/docs/shadownet_tutorial.md" class="btn btn-outline" target="_blank" rel="noreferrer">Read the tutorial</a>
         </div>
       </div>
     </section>
@@ -917,7 +917,7 @@
         <div class="step">
           <div class="step-num">Step 04</div>
           <h3>Shield and send</h3>
-          <p>Connect Temple wallet to fund an initial shield. After shielding, you can send private transactions on Ushuaianet. The wallet delegates proof generation to the Ushuaianet proving service.</p>
+          <p>Connect Temple wallet to fund an initial shield. After shielding, you can send private transactions on Shadownet. The wallet delegates proof generation to the Shadownet proving service.</p>
         </div>
       </div>
     </div>
@@ -967,16 +967,16 @@
 
       <div class="feature">
         <div>
-          <h3>Authorize locally.<br>Prove on Ushuaianet.</h3>
+          <h3>Authorize locally.<br>Prove on Shadownet.</h3>
           <p>TzEL separates spending authority from proof generation. When you initiate a private send, your wallet signs the transaction locally with a hash-based one-time signature. That signature is then checked <em>inside</em> the STARK proof itself &mdash; the prover cannot change what you authorized.</p>
-          <p>The STARK proof is large, so rather than generating it on your laptop, the wallet delegates to the Ushuaianet proving service. The prover sees the transaction you signed but cannot produce a valid proof for any other transaction. Your spend key never leaves the container.</p>
+          <p>The STARK proof is large, so rather than generating it on your laptop, the wallet delegates to the Shadownet proving service. The prover sees the transaction you signed but cannot produce a valid proof for any other transaction. Your spend key never leaves the container.</p>
         </div>
         <div class="feature-visual">
           <span class="dim">wallet (your machine):</span><br>
           &nbsp;&nbsp;authorize tx<br>
           &nbsp;&nbsp;&rarr; <span class="hl">hash-based OTS signature</span><br>
           <br>
-          <span class="dim">proving service (Ushuaianet):</span><br>
+          <span class="dim">proving service (Shadownet):</span><br>
           &nbsp;&nbsp;receive signed tx<br>
           &nbsp;&nbsp;&rarr; build <span class="hl">STARK proof</span><br>
           &nbsp;&nbsp;cannot change tx or<br>
@@ -1046,7 +1046,7 @@
     <!-- ════ Warning ════ -->
     <div class="warning-banner">
       <div class="warning-inner">
-        <strong>Experimental software &mdash; Ushuaianet testnet only.</strong>
+        <strong>Experimental software &mdash; Shadownet testnet only.</strong>
         TzEL is research-grade code. Do not use it for real value. The wallet, rollup, and proving service may reset, break, or change without notice. Your wallet data in <code class="ic-plain">~/.tzel-wallet</code> is not backed up by any server &mdash; if you lose it, there is no recovery. Back it up yourself.
       </div>
     </div>
@@ -1072,7 +1072,7 @@
           </div>
         </div>
         <div class="cta-actions">
-          <a href="https://github.com/trilitech/tzel/blob/main/docs/ushuaianet_tutorial.md" class="btn btn-primary" target="_blank" rel="noreferrer">Full tutorial</a>
+          <a href="https://github.com/trilitech/tzel/blob/main/docs/shadownet_tutorial.md" class="btn btn-primary" target="_blank" rel="noreferrer">Full tutorial</a>
           <a href="https://github.com/trilitech/tzel" class="btn btn-outline" target="_blank" rel="noreferrer">View on GitHub</a>
         </div>
       </div>
